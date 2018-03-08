@@ -33,6 +33,7 @@ Message Type 2 – contains the details of a sale and the number of occurrences 
 Message Type 3 – contains the details of a sale and an adjustment operation to be applied to all stored sales of this product type. Operations can be add, subtract, or multiply e.g Add 20p apples would instruct your application to add 20p to each sale of apples you have recorded.
 
 The Solution
+
 The solution implements a Sales class that uses custom data structures defined for Product, and, PriceAdjuster, and SaleLog which solves the above defined problem.
 
 Assumptions
@@ -41,15 +42,20 @@ There may be invalid messages but only null and empty string and String length a
 The incoming messages have fixed format based on the message type e.g.; - Message Type 1 contains 3 words. - Message Type 2 contains 7 words. - Message Type 3 contains 3 words but always begin with an operational instruction such as Add, Subtract, and Multiply.
 Execution to continue processing messages until 50 sales details are logged that includes the instruction message type 3 as well.
 Util.Logging omitted instead System.out.println used since there was no request on explicit exception handling on incoming messages other than neglecting it and recording only parsed messages.
+
 Algorithm
 Parse incoming message for product details such as type, price, quantity, and instruction set.
 Store the product type if new or fecth the existing from a HashMap and do this on each iteration for sale processing.
 Maintain a PriceAdjuster class to process price adjustment and populate adjustment report of sales.
 Update the processed product details on to a sales log.
 Perform modulo for identifying iteration and log output to console on every 10th iteration and stop on 50th producing the adjustment logs.
+
 How to use?
+
 You can use any IDE of your choice e.g, Intellij, Netbeans or Eclipse.
 
 Requirements
+
 Java 1.8
+
 Junit - Not done.
